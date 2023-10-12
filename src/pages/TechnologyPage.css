@@ -1,0 +1,34 @@
+.TechnologyPage {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50vh;
+  }
+
+  & img {
+    width: 7vw;
+  }
+
+  & .img__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    padding: 4vw;
+    flex: 50%;
+    min-height: 25vh;
+  }
+  & article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8vh 10vw;
+    min-height: 30vh;
+  }
+
+  & p {
+    text-wrap: balance;
+  }
+}
