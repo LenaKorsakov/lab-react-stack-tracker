@@ -1,8 +1,12 @@
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import './TechnologyPage.css';
 
 function TechnologyPage({ technologies }) {
   const { slug } = useParams();
+  const [searchParams] = useSearchParams();
+
+  const previousCompany = searchParams.get('company');
+
   const currentTechnology = technologies.find(
     (technology) => technology.slug === slug
   );
@@ -22,7 +26,13 @@ function TechnologyPage({ technologies }) {
           <p>{currentTechnology.description}</p>
         </article>
       </div>
-      <button onClick={() => navigate(-1)}>Back</button>
+      <button
+        onClick={() =>
+          navigate(previousCompany ? `/company/${previousCompany}` : -1)
+        }
+      >
+        Back
+      </button>
     </div>
   );
 }

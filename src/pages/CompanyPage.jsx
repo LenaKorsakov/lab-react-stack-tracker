@@ -25,7 +25,7 @@ function CompanyPage({ companies }) {
       <aside className="technologies__container">
         {technologies.map((technologie) => {
           return (
-            <Link key={technologie.id} to={`/tech/${technologie.slug}`}>
+            <Link key={technologie.id} to={`/tech/${technologie.slug}?company=${companySlug}`}>
               <article key={technologie.slug}>
                 <div className="technologie-img__wrapper">
                   <img src={technologie.image} alt={technologie.name} />
